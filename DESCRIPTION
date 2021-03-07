@@ -1,0 +1,15 @@
+Package: SimBench
+Title: SimBench: benchmarking simulation methods   
+Version: 0.99.1
+Authors@R: c(
+    person(given = "Yue",family = "Cao", email = "yue.cao@sydney.edu.au",  role=c("aut", "cre")),
+    person(given = "Pengyi",family = "Yang", email = "pengyi.yang@sydney.edu.au",  role="aut" ),
+    person(given = "Jean Yee Hwa",family = "Yang", email = "jean.yang@sydney.edu.au",  role="aut" ))
+Description: The SimBench package is designed for benchmarking simulation methods based on two key aspects of accuracy of data properties estimation and ability to retain biological signals. It contains functions for comparing simulated data obtained from simulation methods and real data that was used as the reference input into the simulation methods on the two aspects. 
+Imports: ks, dplyr, SingleCellExperiment, Seurat, scales, limma, DESeq2, rlist, Seurat, ggplot2, ggpubr, ggthemes, methods
+License:  GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Date: 2021-03-07
