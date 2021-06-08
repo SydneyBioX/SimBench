@@ -14,7 +14,7 @@ ii) measures the similarities of the amount of biological signals in a simulated
 You may need to install the following dependencies first:   
 
 ```r
-ggthemes, ggpubr, ggplot2, dplyr, plyr, Seurat, SingleCellExperiment, edgeR, DESeq2, caret, ks
+WGCNA, ggthemes, ggpubr, ggplot2, dplyr, plyr, Seurat, SingleCellExperiment, edgeR, DESeq2, caret, ks
 ```
 
 
