@@ -50,7 +50,7 @@ path <- system.file("extdata", "sim.rds", package="SimBench")
 sim <- readRDS(path)
 ```
 
-Note both the sim and real dataset needs to be SingleCellExperiment object.  
+Note both the sim and real dataset need to be SingleCellExperiment object, with rownames and colnames. 
 If `celltype` is provided in the object, then the comparison will be made based on each cell type and then combined using a weighted sum (where the weight is the proportion of the cell type).  
 if no `celltype` is provided, then the comparison will be made based on the entire dataset. 
 
