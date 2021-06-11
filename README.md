@@ -8,8 +8,17 @@ i) quantifies the distributional similarities between a simulated scRNA-seq and 
 ii) measures the similarities of the amount of biological signals in a simulated scRNA-seq and a real scRNA-seq data by measuring the proportion difference of DE, DV, DD, BD and BI genes.      
 
 
-## Installation 
 
+
+# Installation 
+
+## Requirements
+
+This package has been tested on Linux (Debian 10) and macOS (Big Sur 11.3.1)
+ 
+ 
+ 
+## Installation guide
 
 You may need to install the following dependencies first:   
 
@@ -26,6 +35,9 @@ devtools::install_github("SydneyBioX/SimBench")
 library(SimBench)
 ```
 
+The installation of `SimBench` itself should take less than 1 minute. 
+
+
 
 # Getting started 
 
@@ -33,7 +45,7 @@ library(SimBench)
 ## Example usage
 
 
-We have provided a 'simulated' data (`sim.rds`) and a 'real' (`real.rds`) scRNA-seq in the github folder to illustrate the usage of our codes. 
+We have provided a 'simulated' data (`sim.rds`) and a 'real' (`real.rds`) scRNA-seq in the github folder to illustrate the usage of our codes. The expected run time for this demo is 2 minutes. 
 
 
 
@@ -108,9 +120,10 @@ Part of the codes was inspired and adapted from R package `countsimQC` and `scCl
 >  Soneson, C., & Robinson, M. D. (2018). Towards unified quality verification of synthetic count data with countsimQC. Bioinformatics, 34(4), 691-692.).   
 >  Lin, Y., Cao, Y., Kim, H. J., Salim, A., Speed, T. P., Lin, D. M., ... & Yang, J. Y. H. (2020). scClassify: sample size estimation and multiscale classification of cells using single and multiple reference. Molecular systems biology, 16(6), e9389.
 
-Installation of `countsimQC` is however not required for running  `SimBench`.   
+Installation of `countsimQC` and `scClassify` is however not required for running  `SimBench`.   
 
 
 
-
+# License
+The package is covered under the Apache 2.0 License. 
 
