@@ -8,22 +8,13 @@ i) quantifies the distributional similarities between a simulated scRNA-seq and 
 ii) measures the similarities of the amount of biological signals in a simulated scRNA-seq and a real scRNA-seq data by measuring the proportion difference of DE, DV, DD, BD and BI genes.      
 
 
+## Installation 
 
-
-# Installation 
-
-## Requirements
-
-This package has been tested on Linux (Debian 10) and macOS (Big Sur 11.3.1)
- 
- 
- 
-## Installation guide
 
 You may need to install the following dependencies first:   
 
 ```r
-WGCNA, ggthemes, ggpubr, ggplot2, dplyr, plyr, Seurat, SingleCellExperiment, edgeR, DESeq2, caret, ks
+ggthemes, ggpubr, ggplot2, dplyr, plyr, Seurat, SingleCellExperiment, edgeR, DESeq2, caret, ks
 ```
 
 
@@ -33,10 +24,9 @@ WGCNA, ggthemes, ggpubr, ggplot2, dplyr, plyr, Seurat, SingleCellExperiment, edg
 library(devtools)
 devtools::install_github("SydneyBioX/SimBench")
 library(SimBench)
+library(parallel)
+library(DESeq2)
 ```
-
-The installation of `SimBench` itself should take less than 1 minute. 
-
 
 
 # Getting started 
@@ -45,7 +35,7 @@ The installation of `SimBench` itself should take less than 1 minute.
 ## Example usage
 
 
-We have provided a 'simulated' data (`sim.rds`) and a 'real' (`real.rds`) scRNA-seq in the github folder to illustrate the usage of our codes. The expected run time for this demo is 2 minutes. 
+We have provided a 'simulated' data (`sim.rds`) and a 'real' (`real.rds`) scRNA-seq in the github folder to illustrate the usage of our codes. 
 
 
 
@@ -62,7 +52,7 @@ path <- system.file("extdata", "sim.rds", package="SimBench")
 sim <- readRDS(path)
 ```
 
-Note both the sim and real dataset need to be SingleCellExperiment object, with rownames and colnames. 
+Note both the sim and real dataset needs to be SingleCellExperiment object.  
 If `celltype` is provided in the object, then the comparison will be made based on each cell type and then combined using a weighted sum (where the weight is the proportion of the cell type).  
 if no `celltype` is provided, then the comparison will be made based on the entire dataset. 
 
@@ -73,7 +63,7 @@ if no `celltype` is provided, then the comparison will be made based on the enti
 The parameter estimation score can be obtained by : 
 
 ```r
-parameter_result <- eval_parameter(real = real, sim = sim, type = "count" , method = "samplemethod")
+parameter_result <- eval_parameter(real = real, sim = sim, type = "raw" , method = "samplemethod")
 ```
 The output contains 3 fields:   
 `stats_overall` gives the overall KDE test statistics     
@@ -120,10 +110,9 @@ Part of the codes was inspired and adapted from R package `countsimQC` and `scCl
 >  Soneson, C., & Robinson, M. D. (2018). Towards unified quality verification of synthetic count data with countsimQC. Bioinformatics, 34(4), 691-692.).   
 >  Lin, Y., Cao, Y., Kim, H. J., Salim, A., Speed, T. P., Lin, D. M., ... & Yang, J. Y. H. (2020). scClassify: sample size estimation and multiscale classification of cells using single and multiple reference. Molecular systems biology, 16(6), e9389.
 
-Installation of `countsimQC` and `scClassify` is however not required for running  `SimBench`.   
+Installation of `countsimQC` is however not required for running  `SimBench`.   
 
 
 
-# License
-The package is covered under the Apache 2.0 License. 
+
 
