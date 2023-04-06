@@ -4,14 +4,14 @@
 \alias{eval_parameter}
 \title{run evaluation on parameter estimation}
 \usage{
-eval_parameter(real, sim, type = "count", method = "samplemethod")
+eval_parameter(real, sim, type = "raw", method = "samplemethod")
 }
 \arguments{
 \item{real}{real data}
 
 \item{sim}{simulated data}
 
-\item{type}{whether the simulated data is normalised or unnormalised}
+\item{type}{whether the simulated data is raw (unnormalised raw count) or normalized}
 
 \item{method}{name of the simulation method}
 }

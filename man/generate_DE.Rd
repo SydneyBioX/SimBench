@@ -7,7 +7,7 @@
 generate_DE(
   exprsMat,
   trainClass,
-  feature = c("DE", "DV", "DD", "DP", "BI"),
+  feature = c("DE", "DV", "DD", "DP", "BD"),
   pSig = 0.1
 )
 }
