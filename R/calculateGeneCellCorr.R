@@ -43,8 +43,6 @@ calculateSampleCorrs <- function(sim_list , maxNForCorr = 1000, ncore = 8 ) {
 }
 
 
-
-
 #' genewise correlation
 #'
 #' @param sim_list  a list containing the real and simulated data

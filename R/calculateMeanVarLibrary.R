@@ -7,7 +7,7 @@
 #' @export
 calculateMeanVarLibrary <- function(sim_list , ncore = 8) {
 
-  mclapply(sim_list , function(ds) {
+  mclapply(sim_list, function(ds) {
     # if Seurat , it means the simulated count matrix is normalised
     # hence library size estimate cannot be obtained
     if (class(ds) == "Seurat") {

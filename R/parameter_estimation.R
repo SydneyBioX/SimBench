@@ -85,13 +85,13 @@ summarise_score <- function( intermediate   ){
 #'
 #' @param real real data
 #' @param sim simulated data
-#' @param type  whether the simulated data is normalised or unnormalised
+#' @param type  whether the simulated data is raw (unnormalised raw count) or normalized
 #' @param method name of the simulation method
 
 #' @return distribution of parameters that are used to construct KDE test, KDE test statistics of each cell type, combined KDE test statistics
 #' @export
 
-eval_parameter <- function(real  , sim  , type  = "count"  ,  method = "samplemethod") {
+eval_parameter <- function(real  , sim  , type  = "raw"  ,  method = "samplemethod") {
 
     #-----------Prepare the dataset ------------------#
 
@@ -118,7 +118,7 @@ eval_parameter <- function(real  , sim  , type  = "count"  ,  method = "sampleme
                                  thissim =  data_real ,
                                  name =   "real" ,
                                  celltype = thiscelltype,
-                                 counttype = "raw")
+                                 counttype =  type)
 
       data_sim  <-  sim [ , sim$celltype ==   thiscelltype ]
 
@@ -126,7 +126,7 @@ eval_parameter <- function(real  , sim  , type  = "count"  ,  method = "sampleme
                                  thissim  = data_sim ,
                                  name = method  ,
                                  celltype = thiscelltype,
-                                 counttype = "raw")
+                                 counttype = type )
 
 
       # generate the evaluation result
