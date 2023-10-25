@@ -1,5 +1,6 @@
 # SimBench: benchmarking of single cell simulation methods
 
+<img src="https://github.com/SydneyBioX/SimBench/blob/master/simbench_sticker.png" align="right" width="200">
 
 The `SimBench` package is designed for benchmarking simulation methods based on two key aspects of accuracy of data properties estimation and ability to retain biological signals.
 
