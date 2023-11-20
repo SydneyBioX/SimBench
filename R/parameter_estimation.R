@@ -65,9 +65,9 @@ summarise_score <- function( intermediate   ){
   for ( i in (1:length(allparameter)) ){
 
     thisparameter <- intermediate[[i]]
-    thisparameter$temp <- abs( as.numeric( thisparameter$kde_zstat )) * thisparameter$proportion
+    thisparameter$temp <- as.numeric( thisparameter$kde_zstat ) * thisparameter$proportion
 
-    temp <-  thisparameter %>%  dplyr::summarise( sum_kde = sum(abs( temp)) )
+    temp <-  thisparameter %>%  dplyr::summarise( sum_kde = sum( temp)) 
 
     return_dataframe[[  allparameter[i]]] <- temp
   }
