@@ -4,6 +4,9 @@
 #' @param ncore number of cores for parallel computing
 #'
 #' @return a list containing the mean , variance , library size estimates of the real and simulated data for downstream evaluation
+#' @import Seurat
+#' @import edgeR
+#' @import DESeq2
 #' @export
 calculateMeanVarLibrary <- function(sim_list , ncore = 8) {
 

@@ -5,6 +5,11 @@
 #' @param ncore number of cores for parallel computing
 #'
 #' @return A data frame with cellwise correlations for real and simulated data
+#' @import WGCNA
+#' @import GO.db
+#' @import impute
+#' @import preprocessCore
+#' @import dplyr
 #' @export
 calculateSampleCorrs <- function(sim_list , maxNForCorr = 1000, ncore = 8 ) {
 
@@ -49,6 +54,11 @@ calculateSampleCorrs <- function(sim_list , maxNForCorr = 1000, ncore = 8 ) {
 #' @param ncore number of cores for parallel computing
 #'
 #' @return A data frame with genewise correlations for real and simulated data
+#' @import WGCNA
+#' @import GO.db
+#' @import impute
+#' @import preprocessCore
+#' @import dplyr
 #' @export
 calculateFeatureCorrs <- function(sim_list ,  ncore = 8) {
 
