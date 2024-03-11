@@ -27,6 +27,8 @@ devtools::install_github("SydneyBioX/SimBench")
 library(SimBench)
 library(parallel)
 library(DESeq2)
+library(Seurat)
+library(dplyr)
 ```
 
 
