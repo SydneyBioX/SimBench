@@ -26,10 +26,10 @@ calculateMeanVarLibrary <- function(sim_list , ncore = 8) {
       }
 
       temp_seurat <- FindVariableFeatures(ds, selection.method = "disp")
-      dge$log2cpm <- ds@assays$RNA@data
-      dge$mean  <-  HVFInfo(temp_seurat)$mean
-      dge$dispersion <-   HVFInfo(temp_seurat)$dispersion
-      dge$dispersion.scaled <- HVFInfo(temp_seurat)$dispersion.scaled
+      dge$log2cpm <- ds[["RNA"]]$data
+      dge$mean  <-  HVFInfo(temp_seurat)[, 1]
+      dge$dispersion <-   HVFInfo(temp_seurat)[, 2]
+      dge$dispersion.scaled <- HVFInfo(temp_seurat)[, 3]
 
 
     } else if (class(ds) == "DESeqDataSet") {
@@ -43,16 +43,16 @@ calculateMeanVarLibrary <- function(sim_list , ncore = 8) {
       # if the class is DEseq, it means the data is raw, and need cpm normalization
       temp_seurat <-  CreateSeuratObject(counts = counts(ds))
       temp_seurat <-  NormalizeData(temp_seurat,  scale = 1e6)
-      # this forces the algorithm to use the data slot, which is the log2 cpm normalised
-      temp_seurat@assays$RNA@counts <- matrix(nrow = 0, ncol = 0)
+      temp_seurat <- SetAssayData(object =   temp_seurat, slot = "counts", new.data =  temp_seurat[["RNA"]]$data)
 
       # note that even though it "finds variable features"
       # it returns the mean and sd of all genes in the dataset
       temp_seurat <-  FindVariableFeatures(temp_seurat, selection.method = "disp")
-      dge$mean  <-  HVFInfo(temp_seurat)$mean
-      dge$dispersion <-  HVFInfo(temp_seurat)$dispersion
-      dge$dispersion.scaled <-  HVFInfo(temp_seurat)$dispersion.scaled
-      dge$log2cpm <- temp_seurat@assays$RNA@data
+      dge$mean  <-  HVFInfo(temp_seurat)[, 1]
+      dge$dispersion <-  HVFInfo(temp_seurat)[, 2]
+      dge$dispersion.scaled <-  HVFInfo(temp_seurat)[, 3]
+      dge$log2cpm <- temp_seurat[["RNA"]]$data
+
 
 
       ## --------------------------- DESeq2 -------------------------- ##
