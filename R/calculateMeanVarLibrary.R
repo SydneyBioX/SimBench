@@ -43,7 +43,7 @@ calculateMeanVarLibrary <- function(sim_list , ncore = 8) {
       # if the class is DEseq, it means the data is raw, and need cpm normalization
       temp_seurat <-  CreateSeuratObject(counts = counts(ds))
       temp_seurat <-  NormalizeData(temp_seurat,  scale = 1e6)
-      temp_seurat <- SetAssayData(object =   temp_seurat, slot = "counts", new.data =  temp_seurat[["RNA"]]$data)
+      temp_seurat <- SetAssayData(object =   temp_seurat, layer = "counts", new.data =  temp_seurat[["RNA"]]$data)
 
       # note that even though it "finds variable features"
       # it returns the mean and sd of all genes in the dataset
