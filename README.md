@@ -108,10 +108,12 @@ draw_biosignal_plot(signal_result)
 
 # Reference
 
+>  Cao, Y., Yang, P. & Yang, J. Y. H. (2021). A benchmark study of simulation methods for single-cell RNA sequencing data. Nature Communications, 12, 6911. [full text](https://www.nature.com/articles/s41467-021-27130-w)
+
 Part of the codes was inspired and adapted from R package `countsimQC` and `scClassify`.    
 
->  Soneson, C., & Robinson, M. D. (2018). Towards unified quality verification of synthetic count data with countsimQC. Bioinformatics, 34(4), 691-692.).   
->  Lin, Y., Cao, Y., Kim, H. J., Salim, A., Speed, T. P., Lin, D. M., ... & Yang, J. Y. H. (2020). scClassify: sample size estimation and multiscale classification of cells using single and multiple reference. Molecular systems biology, 16(6), e9389.
+>  Soneson, C., & Robinson, M. D. (2018). Towards unified quality verification of synthetic count data with countsimQC. Bioinformatics, 34(4), 691-692.   
+>  Lin, Y., Cao, Y., Kim, H. J., Salim, A., Speed, T. P., Lin, D. M., Yang, P. & Yang, J. Y. H. (2020). scClassify: sample size estimation and multiscale classification of cells using single and multiple reference. Molecular Systems Biology, 16(6), e9389. [full text](https://link.springer.com/article/10.15252/msb.20199389)
 
 Installation of `countsimQC` is however not required for running  `SimBench`.   
 
